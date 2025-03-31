@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma declaração de amor especial para a pessoa mais importante da minha vida">
+  <meta name="keywords" content="amor, declaração, namorada, surpresa romântica">
+  <meta name="author" content="Seu Nome">
+  <title>Te Amo Mais Que Tudo! ❤️</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Vídeo de fundo */
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    /* Corações flutuantes */
+    .heart {
+      position: absolute;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-top: 30px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      color: #e91e63;
+      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Texto Principal - MAIS VISÍVEL */
+    .intro-text {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      color: #333; /* Mais escuro para melhor contraste */
+      margin-bottom: 30px;
+      font-family: 'Dancing Script', cursive;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.85); /* Fundo para melhor legibilidade */
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.9); /* Fundo mais branco */
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: #e91e63;
+      margin-bottom: 20px;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.6;
+      margin: 0 auto 15px;
+      color: #333; /* Mais escuro para melhor contraste */
+      max-width: 700px;
+    }
+
+    /* Galeria de Imagens */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 3px solid #fff;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 20px auto 0;
+      display: block;
+      font-family: 'Dancing Script', cursive;
+      box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3);
+    }
+
+    button:hover {
+      background-color: #c2185b;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(233, 30, 99, 0.4);
+    }
+
+    /* RODAPÉ MELHORADO */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #333;
+      padding: 25px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    footer p:first-child {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    footer p:last-child {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Efeito de confete */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #f00;
+      opacity: 0;
+      animation: confetti 5s ease-in-out;
+      z-index: 1000;
+    }
+
+    @keyframes confetti {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      section h2 {
+        font-size: 1.8rem;
+      }
+
+      section p, .intro-text {
+        font-size: 1.1rem;
+      }
+
+      .image-gallery img {
+        height: 250px;
+      }
+      
+      footer p:first-child {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      section p, .intro-text {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+      
+      section {
+        padding: 20px 15px;
+      }
+      
+      footer {
+        padding: 20px 15px;
+      }
+      
+      footer p:first-child {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+  <video class="background-video" autoplay muted loop>
+    <source src="videos/153977-806571978.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos em formato MP4.
+  </video>
+
+  <!-- Corações flutuantes -->
+  <div id="hearts-container"></div>
+
+  <header>
+    <h1>Para a pessoa mais especial do meu mundo ❤️</h1>
+  </header>
+
+  <section>
+    <p class="intro-text">Mariana, cada momento ao seu lado é um presente que eu guardo com todo cuidado no meu coração. Este site é apenas um pequeno reflexo do imenso amor que sinto por você. Você é a razão do meu sorriso e a dona do meu coração.</p>
+  </section>
+
+  <section>
+    <h2>Nossa História</h2>
+    <p>Desde o primeiro momento em que nossos olhares se cruzaram, eu sabia que havia algo especial entre nós. Cada risada, cada conversa, cada momento ao seu lado só confirmou o que meu coração já sabia: você é o amor da minha vida.</p>
+    <p>Lembro de cada detalhe, desde nosso primeiro encontro até os planos que fazemos para o futuro. Você transformou minha vida em algo mais bonito do que eu poderia imaginar.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Nossos Momentos</h2>
+    <p>Algumas das muitas memórias felizes que construímos juntos:</p>
+    <div class="image-gallery">
+      <img src="img/minhamui1e.png" alt="Nosso momento especial 1">
+      <img src="img/minhamuie.png" alt="Nosso momento especial 2">
+      <img src="img/muie2.png" alt="Nosso momento especial 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>O Que Você Significa Para Mim</h2>
+    <p>Você é meu porto seguro, minha inspiração e minha maior alegria. Te amo não só pelo que você é, mas pelo que eu me torno quando estou ao seu lado.</p>
+    <p>Nenhuma palavra é capaz de expressar completamente o que sinto, mas se eu pudesse resumir em uma frase: você é o amor da minha vida e eu sou infinitamente grato por ter você comigo.</p>
+  </section>
+
+  <section>
+    <h2>Surpresa Especial!</h2>
+    <p>Clique no botão abaixo para receber uma mensagem especial:</p>
+    <button id="surpriseBtn">Clique Aqui, Amor ❤️</button>
+    <div id="surpriseMessage" style="display:none; text-align: center;">
+      <p style="color: #e91e63; font-size: 1.8rem; margin-top: 20px; font-family: 'Dancing Script', cursive; animation: pulse 1.5s infinite;">Eu te amo mais do que todas as estrelas no céu! 💖</p>
+      <p style="font-size: 1.2rem; margin-top: 10px;">Você é a realização de todos os meus sonhos e a pessoa que eu quero ao meu lado para sempre.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Feito com todo o amor do meu coração</p>
+    <p> Para a mulher mais incrível do universo ❤️</p>
+  </footer>
+
+  <script>
+    // Criar corações flutuantes
+    function createHearts() {
+      const heartsContainer = document.getElementById('hearts-container');
+      const heartCount = 15;
+      
+      for (let i = 0; i < heartCount; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.innerHTML = '❤️';
+          heart.classList.add('heart');
+          
+          // Posição aleatória
+          const startPositionX = Math.random() * window.innerWidth;
+          heart.style.left = startPositionX + 'px';
+          heart.style.bottom = '-50px';
+          
+          // Tamanho aleatório
+          const size = Math.random() * 30 + 20;
+          heart.style.fontSize = size + 'px';
+          
+          // Duração da animação aleatória
+          const duration = Math.random() * 5 + 5;
+          heart.style.animationDuration = duration + 's';
+          
+          // Atraso aleatório
+          const delay = Math.random() * 5;
+          heart.style.animationDelay = delay + 's';
+          
+          heartsContainer.appendChild(heart);
+          
+          // Remover coração após animação
+          setTimeout(() => {
+            heart.remove();
+          }, duration * 1000);
+        }, i * 1000);
+      }
+    }
+    
+    // Criar corações continuamente
+    createHearts();
+    setInterval(createHearts, 15000);
+    
+    // Mostrar surpresa com confete
+    document.getElementById("surpriseBtn").addEventListener("click", function() {
+      const surpriseMessage = document.getElementById("surpriseMessage");
+      surpriseMessage.style.display = "block";
+      
+      // Criar efeito de confete
+      for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.classList.add('confetti');
+          
+          // Cores aleatórias
+          const colors = ['#e91e63', '#ffeb3b', '#4caf50', '#2196f3', '#9c27b0'];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.backgroundColor = randomColor;
+          
+          // Formas aleatórias
+          const shapes = ['❤️', '🌟', '💖', '🥰', '😍'];
+          const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+          confetti.innerHTML = randomShape;
+          confetti.style.fontSize = (Math.random() * 20 + 15) + 'px';
+          
+          // Posição aleatória
+          confetti.style.left = Math.random() * window.innerWidth + 'px';
+          confetti.style.top = '-50px';
+          
+          // Duração aleatória
+          const duration = Math.random() * 3 + 2;
+          confetti.style.animationDuration = duration + 's';
+          
+          document.body.appendChild(confetti);
+          
+          // Remover confete após animação
+          setTimeout(() => {
+            confetti.remove();
+          }, duration * 1000);
+        }, i * 100);
+      }
+      
+      // Rolar suavemente para a mensagem
+      surpriseMessage.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
